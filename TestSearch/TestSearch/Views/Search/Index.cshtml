@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TestSearch.Models.SearchEngineModel>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <p>
+        @Html.DropDownList("testid", new SelectList(ViewBag.ddlData, "Id", "Name"), "Select from below")
+    </p>
+
+    <form class="form-inline" action="@Url.Action("SearchResults")" method="post">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" class="form-control" id="search-box" name="google" required>
+                </td>
+                <td>
+                    <input type="submit" class="btn btn-primary" value="Google">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+

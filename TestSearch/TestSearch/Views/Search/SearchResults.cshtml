@@ -1,0 +1,24 @@
+﻿@model IEnumerable<TestSearch.Models.SearchResultModel>
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <div>
+        @Html.ActionLink("Back to Search box", "Index")
+    </div>
+    <br/>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li style="width:500px">
+                <a href="@item.Link" class="link-primary" target="_blank">@item.Title</a><br />
+                <span class="text-success">@item.Link</span><br />
+                <span>@item.Snippet</span>
+            </li>
+        }
+    </ul>
+</div>
